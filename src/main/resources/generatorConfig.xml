@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <context id="context1" targetRuntime="MyBatis3">
+     <plugin type="com.hivescm.mybatisgen.plugin.MybatisPaginationPlugin"></plugin>
+  
+ <!--   此处为运行Myruner程序提供的生成部分中文注释的配置，如果使用此配置，注释掉另外一个commentGenerator-->
+   <commentGenerator type="com.hivescm.mybatisgen.plugin.ZhCommentGen">
+               <property name="suppressDate" value="true"/>  
+      <!--       是否去除自动生成的注释 true：是 ： false:否  -->
+            <property  name="suppressAllComments" value="false"/>  
+    </commentGenerator>
+    
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+          connectionURL="jdbc:mysql://47.94.130.58:3306/kanshu_online?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull"
+          userId="app" password="app" />
+    <javaModelGenerator targetPackage="com.hivescm.pay.account.bean" targetProject="src/main/java" />
+    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+    <javaClientGenerator targetPackage="com.hivescm.pay.account.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+       <table tableName="weixin_response" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+    	 <generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
+       </table>
+  </context>
+</generatorConfiguration>
